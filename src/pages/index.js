@@ -1,6 +1,8 @@
 import React from "react";
+// -4 new file
+// -3. import AddKidsToyAnimalForm and go back there
 import AddKidsToyAnimalForm from "../components/AddKidsToyAnimalForm";
-// -3.
+
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Image from "../components/image";
@@ -10,7 +12,8 @@ import { rhythm } from "../utils/typography";
 class BlogIndex extends React.Component {
   // 15. state property
   state = {
-    // 16. keep as it is going to be
+    // 16. keep as it is going to be, an empty object?
+    // Should I keep state in aap.js?
     toyAnimals: {}
   };
   // 16.
@@ -21,27 +24,25 @@ class BlogIndex extends React.Component {
     // 23. use react set state api
 
     // start here:
-    // 1. Take a copy of the existing state, never reach into state and modde directley is a mutation, perf updATING OUT OF ORDER
+    // I. Take a copy of the existing state, never reach into state and modde directley is a mutation, perf updATING OUT OF ORDER
+    const toyAnimals = { ...this.state.toyAnimals };
 
     // 24. OBJECT?
-    const toyAnimals = { ...this.state.toyAnimals };
     // 25. timestamp, since 13xx backticks
 
-    // 2. Add our new toyAnimal to that toyAnimals variable
+    // II. Add our new toyAnimal to that toyAnimals variable
     toyAnimals[`toyAnimal${Date.now()}`] = toyAnimal;
 
     // 26. is equal to that toyanimal photo taht got  passed in (from?)
     // 27. how do we put that new updated state into state?
 
-    // 3. Set the new fishes object to state. WTHeck?
-
+    // III. Set the new fishes object to state. WTHeck?
+    this.setState({ toyAnimals });
     // 28. we call a method that is built in ...
     // 29. you pass it the the piece of state that you wish to update
     // 30. I want to update the list of toyAnimal photos
     // 31. and you want to update it to?
     // 32. go to blog-post.js ->
-
-    this.setState({ toyAnimals });
 
     console.log("adding a toy animal");
   };

@@ -1,36 +1,38 @@
 import React from "react";
 
 class AddKidsToyAnimalForm extends React.Component {
-  nameRef = React.createRef();
   imageRef = React.createRef();
-  createToy = event => {
+  nameRef = React.createRef();
+
+  createFargelegging = event => {
     event.preventDefault();
+    //console.log(this.nameRef.current.value);
 
     const toyAnimal = {
-      name: this.nameRef.current.value,
-      image: this.imageRef.current.value
+      image: this.imageRef.current.value,
+      name: this.nameRef.current.value
     };
-    this.props.addToyAnimal(toyAnimal);
+    this.props.addColoringPage(toyAnimal);
     //refresh the form
     event.currentTarget.reset();
   };
   render() {
     return (
-      <form className="toyAnimal-edit" onSubmit={this.createToy}>
-        {/*        <input
+      <form className="fargelegging-edit" onSubmit={this.createFargelegging}>
+        <input
           name="name"
           ref={this.nameRef}
           type="text"
-          placeholder="Name of Your Kids Fav Toy Animal"
-        /> // 34. easier button*/}
+          placeholder="navn på barnet"
+        />
         <input
           name="image"
           ref={this.imageRef}
           type="text"
-          placeholder="Ta bilde av fargelegging"
+          placeholder="Gi fargeleggingen et navn"
         />
         <button type="submit">
-          + Legg til barnets fargelegging på denne siden
+          + Legg til Lillians fargelegging på denne siden
         </button>
       </form>
     );

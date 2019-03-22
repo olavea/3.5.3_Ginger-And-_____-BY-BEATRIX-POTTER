@@ -3,13 +3,17 @@ import React from "react";
 
 // 1.
 class AddKidsToyAnimalForm extends React.Component {
+
+  // then go to line 36
+
 // 9.
-  nameRef = React.createRef();
   imageRef = React.createRef();
-// 6.
+
+  // 6.
   createToy = event => {
-// 7 . stop the form from submitting
+    // 7 . stop the form from submitting
     event.preventDefault();
+    // 7.2 console.log("Making A Fish 🐠");
 // 10. console.log(this.imageRef.current.value);
 // 11.
     const toyAnimal = {
@@ -19,7 +23,8 @@ class AddKidsToyAnimalForm extends React.Component {
 
       // 14. into state into index
     };
-    // 12. console what?
+    // 12.  console what?
+    console.log(fish);
     // 21.
     // 22. console sdding s fish
     this.props.addToyAnimal(toyAnimal);
@@ -29,29 +34,40 @@ class AddKidsToyAnimalForm extends React.Component {
   render() {
     return (
 // 2. w#13 7:11
-      <form className="toyAnimal-edit" {/* 3.  <-w#13 7:22  5.*/} onSubmit={this.createToy}>
-        <input
-          name="name"
-          // 8.
-          ref={this.nameRef}
-          type="text"
-          placeholder="Name of Your Kids Fav Toy Animal"
-        />
-
+      <form className="toyAnimal-edit" {/* <3.  <-w#13 7:22  5.->*/} onSubmit={this.createToy}>
+      {/*go to line 13*/}
         <input
           name="image"
+          // 8.
           ref={this.imageRef}
           type="text"
           placeholder="Photo of Your Kids fav toy animal"
         />
         <button type="submit">
-          + Add Your Kids Fav Toy Animal Name and Photo // 4.
+          + Add Your Kids coloring page Photo {/* // 4. go to line 37*/}
         </button>
       </form>
     );
   }
 }
 export default AddKidsToyAnimalForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // nameRef = React.createRef();
 // imageRef = React.createRef();

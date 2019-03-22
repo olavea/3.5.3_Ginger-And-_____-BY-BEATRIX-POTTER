@@ -1,0 +1,17 @@
+backend:
+  name: github
+  branch: master
+  repo: olavea/3.5.3_Ginger-And-_____-BY-BEATRIX-POTTER
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "team"
+    label: "Team"
+    folder: "src/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Team Member", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
